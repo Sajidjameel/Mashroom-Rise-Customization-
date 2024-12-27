@@ -1,0 +1,122 @@
+---
+cart: true 
+---
+{{inject 'cancelButtonText' (lang 'common.cancel')}}
+{{#partial "page"}}
+{{inject 'invalidEntryMessage' (lang 'cart.invalid_entry_message')}}
+<style>.cart-item-figure::after {
+    content: none !important; /* Or use content: unset !important; */
+}
+</style>
+<div class="page">
+
+    <div class="page-content" data-cart>
+      
+<!--erase bredcrumbs from here and cart -title-->
+      
+
+        <div data-cart-status>
+            {{> components/cart/status-messages}}
+        </div>
+
+        {{#if cart.items.length}}
+            <!--<div class="loadingOverlay"></div>-->
+
+            <div class="cart-main-wrap">
+                <div data-cart-content class="cart-content-padding-right">
+                      
+                    {{> components/cart/content}}
+                </div>
+    
+                <div data-cart-totals class="cart-content-padding-right">
+                    {{> components/cart/totals}}
+                </div>
+            </div>
+
+            {{{region name="cart_below_totals"}}}
+           
+            <!--check out button start-->
+          <!-- remove the checkout button -->
+            <!--check out button end-->
+        {{else}}
+            <h3 tabindex="0" class="empty-cart">{{lang 'cart.checkout.empty_cart'}}</h3>
+        {{/if}}
+
+    </div>
+</div>
+{{/partial}}
+{{> layout/base}}
+<!-- {{json customer}} -->
+
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+
+document.body.addEventListener('change', function (event) {
+    if (event.target.classList.contains('cart-item-checkbox')) {
+        collectCheckedItems();
+    }
+});
+
+document.body.addEventListener('click', function (event) {
+    if (event.target.id === 'checkout-button') {
+        event.preventDefault();
+        handleCheckout();
+    }
+});
+
+function collectCheckedItems() {
+    const checkedItems = [];
+
+    document.querySelectorAll('.cart-item-checkbox').forEach(checkbox => {
+        const productId = checkbox.getAttribute('item-id');
+        checkedItems.push({ 
+            productId, 
+            subscription: checkbox.checked 
+        });
+    });
+
+    return checkedItems;
+}
+
+function handleCheckout() {
+    fetch('/api/storefront/carts?include=', {
+        'credentials': 'include',
+        'headers': {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
+    }).then(function (response) {
+        return response.json();
+      
+    }).then(function (data) {
+        const cart = data[0];  
+        const customerId = cart.customerId;
+        const cartId = cart.id;
+        const checkedItems = collectCheckedItems();
+
+        if (customerId === 0) {
+           
+            window.location.href = '/login.php?redirect=/cart';
+        } else {
+           
+            const queryParams = new URLSearchParams();
+            queryParams.append('cartId', cartId);
+            queryParams.append('items', JSON.stringify(checkedItems));
+
+            //window.location.href = `http://127.0.0.1:5173/?${queryParams.toString()}`;
+        window.location.href = `https://lionfish-app-vyx4z.ondigitalocean.app/?${queryParams.toString()}`;
+        }
+    }).catch(function (error) {
+        console.error('Error fetching cart data:', error);
+    });
+}
+});
+
+
+</script>
+
+    
+    
