@@ -1,0 +1,41 @@
+---
+blog:
+    posts:
+        limit: 4
+        pages: 3
+        summary: 200
+---
+{{#partial "head"}}
+    {{#if pagination.blog.previous}}
+        <link rel="prev" href="{{pagination.blog.previous}}">
+    {{/if}}
+    {{#if pagination.blog.next}}
+        <link rel="next" href="{{pagination.blog.next}}">
+    {{/if}}
+{{/partial}}
+
+
+
+{{#partial "page"}}
+{{{region name="custom_blog_banner"}}}
+
+<!--{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}-->
+
+<main class="page">
+    <div class="container">
+    <!--{{#unless theme_settings.hide_blog_page_heading }}-->
+    <!--    <h1 class="page-heading">{{ blog.name }}</h1>-->
+    <!--{{/unless}}-->
+
+    <div class="blog-list jotha">
+    {{#each blog.posts}}
+        {{> components/blog/post post=this theme_settings=../theme_settings}}
+    {{/each}}
+    </div>
+    
+    {{> components/common/paginator pagination.blog}}
+    </div>
+</main>
+
+{{/partial}}
+{{> layout/base}}
