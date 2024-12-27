@@ -1,0 +1,57 @@
+{{#partial "page"}}
+
+<!--{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}-->
+
+<main class="page">
+    <!--{{#unless theme_settings.hide_contact_us_page_heading }}-->
+    <!--    <h1 class="page-heading dd">{{page.title}}</h1>-->
+    <!--{{/unless}}-->
+
+    {{#if page.sub_pages}}
+        <nav class="navBar navBar--sub">
+            <ul class="navBar-section account-navigation">
+                {{#each page.sub_pages}}
+                    <li class="navBar-item"><a class="navBar-action" href="{{url}}">{{title}}</a></li>
+                {{/each}}
+            </ul>
+        </nav>
+    {{/if}}
+
+    <div id="contact-us-page" class="page-content page-content--centered custom-design">
+        {{#if forms.contact.success}}
+            <div id="contact-us-success">{{{lang 'forms.contact_us.successful' shopPath=urls.home}}}</div>
+        {{else}}
+            <!--<p>{{{page.content}}}</p>-->
+            <div class="contact-info">
+                <p>GET IN TOUCH</p>
+                <h2>We're happy to answer questions or help you with returns. <br> Please fill out the form below if you need assistance.</h2>
+            </div>
+            {{> components/page/contact-us-form}}
+        {{/if}}
+
+    </div>
+
+</main>
+
+{{/partial}}
+
+{{> layout/base}}
+
+<style>
+    body.page_type_page_contact_form #contact-us-page.custom-design {
+        max-width: 800px !important;
+    }
+    body.page_type_page_contact_form #contact-us-page.custom-design .contact-info h2{
+        font-size: 20px !important;
+    }
+    
+
+    body.page_type_page_contact_form #contact-us-page.custom-design:before{
+    background: url(https://cdn11.bigcommerce.com/s-tubgrbzynw/images/stencil/original/image-manager/asset-1.png?t=1721819285) !important;
+    width: 80% !important;
+    top: -283px !important;
+    background-size: 100% !important;
+    left: 60% !important;
+    transform:  translateX(-61%) ;
+}
+</style>
