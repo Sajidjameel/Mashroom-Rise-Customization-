@@ -2,11 +2,15 @@
 MushroomRise.com offers premium mushroom-based wellness products, including supplements and superfoods. Focused on sustainability and holistic health, the platform provides a seamless shopping experience and educational resources, empowering customers to embrace natural wellness solutions.
 # MushroomRise.com: Premium Mushroom-Based Wellness Products
 
+![image](https://github.com/user-attachments/assets/2e742594-e85e-4d40-99de-e40faf1d4259)
+
 ## Project Overview
 
 The **MushroomRise.com** website is a wellness-focused eCommerce platform built on the **BigCommerce** platform. It specializes in offering premium mushroom-based products, including supplements, powders, and superfoods, designed to promote holistic health and sustainability. The platform is crafted to cater to health-conscious individuals looking for high-quality, natural wellness solutions.
 
 MushroomRise.com features an intuitive user interface, detailed product pages, secure payment options, and educational resources that empower customers to make informed decisions about their health and wellness journey.
+
+![image](https://github.com/user-attachments/assets/e79bdc99-2084-4d00-a621-bfd9f3ab785c)
 
 ---
 
@@ -52,6 +56,8 @@ MushroomRise.com features an intuitive user interface, detailed product pages, s
 - Superfood Powders
 - Wellness Kits
 - Holistic Health Guides
+
+![image](https://github.com/user-attachments/assets/c51c45f2-9071-416e-88e8-08f35092bc4d)
 
 ---
 
