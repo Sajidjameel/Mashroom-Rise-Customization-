@@ -1,0 +1,71 @@
+---
+blog:
+    recent_posts:
+        limit: 3
+---
+
+{{#partial "page"}}
+
+<!--{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}-->
+
+{{> components/blog/post post=blog.post show_tags=true is_blog_post=true}}
+
+
+ <!--custom blogs-->
+<div class="blog custom-home-blog resent-blog">
+    <div class="container">
+        <h2 class="page-heading">Related Podcasts</h2>
+        <div class="blog-list">
+        {{#each blog.recent_posts}}
+        <div class="blog-item">
+            <div class="blog-thumbnail">
+                <a href="{{url}}">
+                    <img src="{{getImage thumbnail '280' }}" alt="{{thumbnail.alt}}">
+                </a>
+            </div>
+            <div class="blog-info">
+                <ul class="tags">
+                    {{#each tags}}
+                    <li class="tag">
+                        <a href="{{url}}">{{name}}</a>
+                    </li>
+                    {{/each}}
+                </ul>
+                <h5 class="blog-title"><a href="{{url}}">{{title}}</a></h5>
+                <p class="blog-post">{{summary}}</p>
+                <a class="blog-link-btn" href="{{url}}">Listen to podcast</a>
+            </div>
+            
+        </div>
+        {{/each}}
+    </div>
+    </div>
+</div>
+<!--custom blogs-->
+
+<!--{{{ region name="blog_post_bottom_banner--global" }}}-->
+
+<div class="blog-bottom-banner">
+    <div class="container">
+        <img src="https://cdn11.bigcommerce.com/s-429qx0qsg4/images/stencil/original/image-manager/blog-bottom-banner.png" >
+        <div class="banner-content">
+            <div class="logo-wrap">
+                <img src="https://cdn11.bigcommerce.com/s-429qx0qsg4/images/stencil/250x100/logo_1714452592__77316.original.png">
+            </div>
+            <div class="title-wrap">
+                <h2>Unleash the Power of Medicinal <span>Mushrooms</span></h2>
+                <p>Pure, Potent, and Transparent Supplements for Holistic Wellness</p>
+            </div>
+            <div class="btn">
+                <a href="#" class="heroCarousel-action button button--primary">
+                    <span>Buy Now</span>
+                    <span class="text-up">Buy Now</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{{/partial}}
+{{> layout/base}}
