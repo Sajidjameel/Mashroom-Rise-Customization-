@@ -1,0 +1,801 @@
+{{#partial "page"}}
+
+<!--{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}-->
+
+<main class="page">
+    {{#unless theme_settings.hide_page_heading }}
+        <!--<h1 class="page-heading">{{ page.title }}</h1>-->
+    {{/unless}}
+
+    {{#if page.sub_pages}}
+    <nav class="navBar navBar--sub">
+        <ul class="navBar-section account-navigation">
+        {{#each page.sub_pages}}
+            <li class="navBar-item"><a class="navBar-action" href="{{url}}">{{title}}</a></li>
+        {{/each}}
+        </ul>
+    </nav>
+    {{/if}}
+
+    {{{region name="page_builder_content"}}}
+
+    <!--<div class="page-content page-content--centered">-->
+    <!--    {{#replace '%%Syndicate%%' page.content}}-->
+    <!--        {{> components/page/rss_feed}}-->
+    <!--    {{else}}-->
+    <!--        <p>{{{page.content}}}</p>-->
+    <!--    {{/replace}}-->
+    <!--</div>-->
+
+    {{#if page.feed}}
+        <ul>
+            {{#each page.feed}}
+                <li>
+                    <h6><a href="{{url}}" target="_blank">{{title}}</a></h6>
+                    <p>{{content}}</p>
+                </li>
+            {{/each}}
+        </ul>
+    {{/if}}
+    
+    {{#if page.title '===' 'who we are' }}
+        {{{ region name="custom_hero_banner" }}}
+        {{{ region name="custom_rich_text" }}}
+        {{{ region name="custom_icons_section" }}}
+        {{{ region name="custom_benefit" }}}
+        {{{ region name="custom_faqs" }}}
+       
+    {{/if}}
+    
+    {{#if page.title '===' 'QR code page' }}
+        {{{ region name="custom_hero_banner_qr" }}}
+        {{{ region name="custom_production_info" }}}
+        {{{ region name="custom_research" }}} 
+    {{/if}}
+    
+    {{#if page.title '===' 'Privacy Policy' }}
+        {{{ region name="custom_page_head" }}}
+        {{{ region name="custom_page_content" }}}
+        {{{ region name="custom_bottom_banner" }}}
+    {{/if}}
+    
+    {{#if page.title '===' 'Terms of Service' }}
+        {{{ region name="custom_page_head" }}}
+        {{{ region name="custom_page_content" }}}
+        {{{ region name="custom_bottom_banner" }}}
+    {{/if}}
+    
+    {{#if page.title '===' 'Third Party Test' }}
+        <div class="third-party-wrapper">
+            
+            
+           <div class="container">
+                <div class="tabs-wrapper">
+                  <div class="tabs-new">
+                      <!-- mob view -->
+                        <div class="mob-view-tabber">
+                            <div class="top-select-button">
+                                <a href="#">
+                                    <img src="https://cdn11.bigcommerce.com/s-429qx0qsg4/images/stencil/original/image-manager/turkey-tail-new-img.png">
+                                    <span>Turkey Tail</span>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- mob view -->
+                      <div class="tabslist">
+                          <div class="select-pro-wrap">
+                              <div class="select-pro-btn">
+                                  <span class="arrow-icon" id="select-pro-back">
+                                      <img src="https://cdn11.bigcommerce.com/s-429qx0qsg4/images/stencil/original/image-manager/caretdown.png">
+                                  </span>
+                                  <span>Select product</span>
+                              </div>
+                          </div>
+                          
+                          <div class="tab-new tab-turkey-tail active">
+                              <a href="#tp-turkey-tail">
+                                  <img src="//cdn11.bigcommerce.com/s-tubgrbzynw/content/images/turkey-tail-new-img.webp">
+                                  
+                                  <span>Turkey Tail</span>
+                              </a>
+                          </div>
+                          <div class="tab-new tab-lions-main">
+                             <a id="tp-lion-mane-btn" href="#tp-lion-mane">
+                                  <img src="//cdn11.bigcommerce.com/s-tubgrbzynw/content/images/lions-main.webp">
+                                  <span>Lion's Mane</span>
+                              </a>
+                          </div>
+                          <div class="tab-new tab-cordyceps">
+                              <a href="#tp-cordyceps">
+                                  <img src="//cdn11.bigcommerce.com/s-tubgrbzynw/content/images/cordyceps-img.webp">
+                                  <span>Cordyceps</span>
+                              </a>
+                          </div>
+                          <div class="tab-new tab-rieshi">
+                              <a href="#tp-rieshi">
+                                  <img src="//cdn11.bigcommerce.com/s-tubgrbzynw/content/images/rieshi.webp">
+                                  <span>Reishi</span>
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="tab-content-new">
+                      <div id="tp-turkey-tail" class="cont-item cont-item-1 active">
+                           <div class="con-content content-turkey-trail">
+                                <div class="custom-breadcrumbs">
+                                    <p><span>Turkey Tail Product</span> <span>></span> <span>Third party test</span></p>
+                            
+                                </div>
+                                <div class="disc-wrap">
+                                    <div class="main-title">
+                                        <h2>Turkey Tail</h2>
+                                    </div>
+                                    <div class="disc">
+                                        <p>Boost your immunity with Turkey Tail Mushroom Extract! Enhance gut health, support digestion, and fight inflammation. Rich in antioxidants, it helps combat infections and promotes overall wellness. Experience the natural benefits of Turkey Tail today!</p>
+                                    </div>
+                                </div>
+                                <div class="btns-wrap">
+                                    <a href="#" class="tp-btn primary">Merieux</a>
+                                    <a href="#" class="tp-btn" style="display: none;">Alkemist</a>
+                                </div>
+                                <a class="download-doc-btn" href="#" download>
+                                    <span>
+                                        <img src="https://cdn11.bigcommerce.com/s-429qx0qsg4/images/stencil/original/image-manager/download-doc-icon.png" />
+                                    </span>
+                                    <span>Download PDF</span>
+                                </a>
+                                
+                                <div class="document-wrap">
+                                    <img class="doc" src="//cdn11.bigcommerce.com/s-429qx0qsg4/images/stencil/original/image-manager/turkey-tail-full-report-redacted-page-0001.jpg" alt="">
+                                    <img class="doc" src="//cdn11.bigcommerce.com/s-429qx0qsg4/images/stencil/original/image-manager/turkey-tail-full-report-redacted-page-0002.jpg" alt="">
+                                    <img class="doc" src="//cdn11.bigcommerce.com/s-429qx0qsg4/images/stencil/original/image-manager/turkey-tail-full-report-redacted-page-0003.jpg" alt="">
+                                </div>
+                                
+                            </div>
+                      </div>
+                      <div id="tp-lion-mane" class="cont-item cont-item-2">
+                          <div class="con-content content-lions-main">
+                                <div class="custom-breadcrumbs">
+                                    <p><span>Lion's Mane Product</span> <span>></span> <span>Third party test</span></p>
+                            
+                                </div>
+                                <div class="disc-wrap">
+                                    <div class="main-title">
+                                        <h2>Lion's Mane</h2>
+                                    </div>
+                                    <div class="disc">
+                                        <p>Boost your health with Lion's Mane Mushroom Extract! Enhance cognitive function, improve memory, and support nerve regeneration. Reduce inflammation, strengthen your immune system, and alleviate anxiety and depression. Promote gut health naturally. Try it today!</p>
+                                    </div>
+                                </div>
+                                <div class="btns-wrap">
+                                    <a href="#" class="tp-btn primary">Merieux</a>
+                                    <a href="#" class="tp-btn" style="display: none;">Alkemist</a>
+                                </div>
+                                
+                                <div class="download-doc-btn" href="#" download>
+                                    <span>
+                                        <img src="https://cdn11.bigcommerce.com/s-429qx0qsg4/images/stencil/original/image-manager/download-doc-icon.png" />
+                                    </span>
+                                    <span>Download PDF</span>
+                                </div>
+                                
+                                <div class="document-wrap">
+                                    <img class="doc" src="//cdn11.bigcommerce.com/s-429qx0qsg4/images/stencil/original/image-manager/lions-mane-full-report-redacted-page-0001.jpg" alt="">
+                                    <img class="doc" src="//cdn11.bigcommerce.com/s-429qx0qsg4/images/stencil/original/image-manager/lions-mane-full-report-redacted-page-0002.jpg" alt="">
+                                    <img class="doc" src="//cdn11.bigcommerce.com/s-429qx0qsg4/images/stencil/original/image-manager/lions-mane-full-report-redacted-page-0003.jpg" alt="">
+                                </div>
+                          </div>
+                      </div>
+                      <div id="tp-cordyceps" class="cont-item cont-item-3">
+                            <div class="con-content content-cordyceps">
+                                  <div class="custom-breadcrumbs" style="display:none">
+                                      <p><span>Cordyceps Product</span> <span>></span> <span>Third party test</span></p>
+                                
+                                  </div>
+                                  <div class="disc-wrap">
+                                      <div class="main-title">
+                                          <h2>Coming Soon</h2>
+                                      </div>
+                                      <div class="disc" style="display: none;">
+                                          <p>Unlock your potential with Cordyceps Mushroom Extract! Boost energy, enhance stamina, and improve athletic performance. Support heart health and respiratory function while fighting fatigue. Elevate your daily wellness with nature's powerhouse. Get it now!</p>
+                                      </div>
+                                  </div>
+                                  <div class="btns-wrap" style="display: none;">
+                                      <a href="#" class="tp-btn primary">Merieux</a>
+                                      <a href="#" class="tp-btn">Alkemist</a>
+                                  </div>
+                                  
+                                  <div class="download-doc-btn" href="#" download style="display: none;">
+                                    <span>
+                                        <img src="https://cdn11.bigcommerce.com/s-429qx0qsg4/images/stencil/original/image-manager/download-doc-icon.png" />
+                                    </span>
+                                    <span>Download PDF</span>
+                                  </div>
+                                  
+                                  <div class="document-wrap" style="display: none;">
+                                    <img class="doc" src="https://cdn11.bigcommerce.com/s-429qx0qsg4/images/stencil/original/image-manager/turkey-tail-comounds-heavy-metals-1.png" alt="">
+                                    <img class="doc" src="https://cdn11.bigcommerce.com/s-429qx0qsg4/images/stencil/original/image-manager/turkey-tail-comounds-heavy-metals-2.png" alt="">
+                                    <img class="doc" src="https://cdn11.bigcommerce.com/s-429qx0qsg4/images/stencil/original/image-manager/turkey-tail-comounds-heavy-metals-3.png" alt="">
+                                  </div>
+                            </div>
+                      </div>
+                      <div id="tp-rieshi" class="cont-item cont-item-4">
+                            <div class="con-content content-rieshi">
+                              <div class="custom-breadcrumbs" style="display:none">
+                                  <p><span>Reishi Product</span> <span>></span> <span>Third party test</span></p>
+                            
+                              </div>
+                              <div class="disc-wrap">
+                                  <div class="main-title">
+                                      <h2>Coming Soon</h2>
+                                  </div>
+                                  <div class="disc" style="display: none;">
+                                      <p>Experience the healing power of Reishi Mushroom Extract! Boost your immune system, reduce stress, and improve sleep quality. Support heart health, enhance liver function, and fight fatigue. Promote overall well-being with this natural remedy. Try it today!</p>
+                                  </div>
+                              </div>
+                              <div class="btns-wrap" style="display: none;">
+                                  <a href="#" class="tp-btn primary">Merieux</a>
+                                  <a href="#" class="tp-btn">Alkemist</a>
+                              </div>
+                              
+                              <div class="download-doc-btn" href="#" download style="display: none;">
+                                    <span>
+                                        <img src="https://cdn11.bigcommerce.com/s-429qx0qsg4/images/stencil/original/image-manager/download-doc-icon.png" />
+                                    </span>
+                                    <span>Download PDF</span>
+                              </div>
+                              <div class="document-wrap" style="display: none;">
+                                <img class="doc" src="https://cdn11.bigcommerce.com/s-429qx0qsg4/images/stencil/original/image-manager/turkey-tail-comounds-heavy-metals-1.png" alt="">
+                                <img class="doc" src="https://cdn11.bigcommerce.com/s-429qx0qsg4/images/stencil/original/image-manager/turkey-tail-comounds-heavy-metals-2.png" alt="">
+                                <img class="doc" src="https://cdn11.bigcommerce.com/s-429qx0qsg4/images/stencil/original/image-manager/turkey-tail-comounds-heavy-metals-3.png" alt="">
+                              </div>
+                            </div>
+                      </div>
+                  </div>
+            </div>
+           </div>
+        </div>
+        {{{ region name="page-bottom-banner" }}}
+    {{/if}}
+    
+    {{#if page.title '===' 'Clinical Study' }}
+        <div class="third-party-wrapper clinical-study">
+            <div class="container">
+                <div class="tabs-wrapper">
+                    <div class="tabs-new">
+                        <!-- mob view -->
+                        <div class="mob-view-tabber">
+                            <div class="top-select-button">
+                                <a href="#">
+                                    <img src="https://cdn11.bigcommerce.com/s-429qx0qsg4/images/stencil/original/image-manager/turkey-tail-new-img.png">
+                                    <span>Turkey Tail</span>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- mob view -->
+                        
+                        <div class="tabslist">
+                            <div class="select-pro-wrap">
+                                <div class="select-pro-btn">
+                                    <span class="arrow-icon" id="select-pro-back">
+                                        <img src="https://cdn11.bigcommerce.com/s-429qx0qsg4/images/stencil/original/image-manager/caretdown.png">
+                                    </span>
+                                    <span>Select product</span>
+                                </div>
+                            </div>
+                            
+                            <div class="tab-new tab-turkey-tail active">
+                                <a href="#cs-turkey-tail">
+                                    <img src="//cdn11.bigcommerce.com/s-tubgrbzynw/content/images/turkey-tail-new-img.webp">
+                                    
+                                    <span>Turkey Tail</span>
+                                </a>
+                            </div>
+                            <div class="tab-new tab-lions-main">
+                                <a href="#cs-lion-mane">
+                                    <img src="//cdn11.bigcommerce.com/s-tubgrbzynw/content/images/lions-main.webp">
+                                    <span>Lion's Mane</span>
+                                </a>
+                            </div>
+                            <div class="tab-new tab-cordyceps">
+                                <a href="#cs-cordyceps">
+                                    <img src="//cdn11.bigcommerce.com/s-tubgrbzynw/content/images/cordyceps-img.webp">
+                                    <span>Cordyceps</span>
+                                </a>
+                            </div>
+                            <div class="tab-new tab-rieshi">
+                                <a href="#cs-rieshi">
+                                    <img src="//cdn11.bigcommerce.com/s-tubgrbzynw/content/images/rieshi.webp">
+                                    <span>Reishi</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div  class="tab-content-new">
+                        <div id="cs-turkey-tail" class="cont-item cont-item-1 active">
+                            <div class="con-content content-turkey-trail">
+                                <div class="custom-breadcrumbs">
+                                    <p><span>Turkey Tail Product</span> <span>></span> <span>Clinical Study</span></p>
+                            
+                                </div>
+                                <div class="disc-wrap">
+                                    <div class="main-title">
+                                        <h2>Turkey Tail</h2>
+                                    </div>
+                                    <div class="disc">
+                                        <p>Introducing our 100% organic Turkey Tail (Trametes versicolor) mushroom extract – a natural supplement that harnesses the power of this remarkable fungus, revered in traditional medicine and backed by contemporary scientific research.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="research-wrapper">
+                                    <div class="container">
+                                        <div class="title-wrap">
+                                            <h2>Research</h2>
+                                        </div>
+                                        <div class="content-tabs-wrap">
+                                            <div class=" tabs-links-wrap">
+                                                <div class="tabs-link active">
+                                                    <h3 class="active">Oncology</h3>
+                                                    <div class="link-content-item ">
+                                                        <div class="inner">
+                                                            <a href="https://www.cancer.gov/about-cancer/treatment/cam/hp/mushrooms-pdq">Medicinal Mushrooms (PDQ®)</a>
+                                                            <a href="https://pubmed.ncbi.nlm.nih.gov/32697746/">The use of Hericium erinaceus and Trametes versicolor extracts in supportive treatment in oncology</a>
+                                                            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10183216/">Therapeutic Effects of Medicinal Mushrooms on Gastric, Breast, and Colorectal Cancer: A Scoping Review </a>
+                                                            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9687461/">Polysaccharide-Peptide from Trametes versicolor: The Potential Medicine for Colorectal Cancer Treatment</a>
+                                                            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2845472/">Trametes versicolor Mushroom Immune Therapy in Breast Cancer</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tabs-link">
+                                                    <h3>Infectious Diseases</h3>
+                                                    <div class="link-content-item ">
+                                                        <div class="inner">
+                                                            <a href="https://pubmed.ncbi.nlm.nih.gov/25271984/">Control of oral human papillomavirus (HPV) by medicinal mushrooms, Trametes versicolor and Ganoderma lucidum: a preliminary clinical trial</a>
+                                                            <a href="https://pubmed.ncbi.nlm.nih.gov/33746195/">Efficacy of a Coriolus versicolor-Based Vaginal Gel in Women With Human Papillomavirus-Dependent Cervical Lesions: The PALOMA Study</a>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tabs-link">
+                                                    <h3>Antioxidant</h3>
+                                                    <div class="link-content-item ">
+                                                        <div class="inner">
+                                                            <a href="https://pubmed.ncbi.nlm.nih.gov/33389854/">
+                                                                Turkey Tail Medicinal Mushroom, Trametes versicolor (Agaricomycetes), Crude Exopolysaccharides with Antioxidative Activity</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tabs-link">
+                                                    <h3>Pain Management</h3>
+                                                    <div class="link-content-item ">
+                                                        <div class="inner">
+                                                            <a href="https://pubmed.ncbi.nlm.nih.gov/30584942/">
+                                                                Polysaccharopeptide from Trametes versicolor blocks inflammatory osteoarthritis pain-morphine tolerance effects via activating cannabinoid type 2 receptor</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tabs-link">
+                                                    <h3>Bones / Glycemia</h3>
+                                                    <div class="link-content-item ">
+                                                        <div class="inner">
+                                                            <a href="https://pubmed.ncbi.nlm.nih.gov/26308886/">
+                                                                Characterization of α-glucosidase inhibitory constituents of the fruiting body of lion's mane mushroom (Hericium erinaceus)</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div id="cs-lion-mane" class="cont-item cont-item-2">
+                            <div class="con-content content-lions-main">
+                                <div class="custom-breadcrumbs">
+                                    <p><span>Lion's Mane Product</span> <span>></span> <span>Clinical Study</span></p>
+                            
+                                </div>
+                                <div class="disc-wrap">
+                                    <div class="main-title">
+                                        <h2>Lion's Mane</h2>
+                                    </div>
+                                    <div class="disc">
+                                        <p>Introducing our 100% organic Turkey Tail (Trametes versicolor) mushroom extract – a natural supplement that harnesses the power of this remarkable fungus, revered in traditional medicine and backed by contemporary scientific research.</p>
+                                    </div>
+                                </div>
+                                <div class="research-wrapper">
+                                    <div class="container">
+                                        <div class="title-wrap">
+                                            <h2>Research</h2>
+                                        </div>
+                                        <div class="content-tabs-wrap">
+                                            <div class=" tabs-links-wrap">
+                                                <div class="tabs-link active">
+                                                    <h3 class="active">Mental Health/ Neuro Disease</h3>
+                                                    <div class="link-content-item ">
+                                                        <div class="inner">
+                                                            <a href="https://pubmed.ncbi.nlm.nih.gov/26308886/">Therapeutic Potential of Hericium erinaceus for Depressive Disorder</a>
+                                                            <a href="https://pubmed.ncbi.nlm.nih.gov/35627059/">Edible Mushrooms as a Potential Component of Dietary Interventions for Major Depressive Disorder</a>
+                                                            <a href="https://pubmed.ncbi.nlm.nih.gov/35877305/">Lion's Mane ( Hericium erinaceus) Exerts Anxiolytic Effects in the rTg4510 Tau Mouse Model</a>
+                                                            <a href="https://pubmed.ncbi.nlm.nih.gov/29953363/">Dietary Supplementation of Lion's Mane Medicinal Mushroom, Hericium erinaceus (Agaricomycetes), and Spatial Memory in Wild-Type Mice</a>
+                                                            <a href="https://pubmed.ncbi.nlm.nih.gov/31374912/">Lion's Mane Mushroom, Hericium erinaceus (Bull.: Fr.) Pers. Suppresses H2O2-Induced Oxidative Damage and LPS-Induced Inflammation in HT22 Hippocampal</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tabs-link">
+                                                    <h3>Nerve Regrowth</h3>
+                                                    <div class="link-content-item ">
+                                                        <div class="inner">
+                                                            <a href="https://pubmed.ncbi.nlm.nih.gov/26853959/">
+                                                                Lion's Mane, Hericium erinaceus and Tiger Milk, Lignosus rhinocerotis (Higher Basidiomycetes) Medicinal Mushrooms Stimulate Neurite Outgrowth in Dissociated Cells of Brain, Spinal Cord, and Retina: An In Vitro Study</a>
+                                                            <a href="https://pubmed.ncbi.nlm.nih.gov/33246107/">Neurotrophic isoindolinones from the fruiting bodies of Hericium erinaceus</a>
+                                                            <a href="https://pubmed.ncbi.nlm.nih.gov/24266378/">Neurotrophic properties of the Lion's mane medicinal mushroom, Hericium erinaceus (Higher Basidiomycetes) from Malaysia</a>
+                                                            <a href="https://pubmed.ncbi.nlm.nih.gov/23510212/">Neuroregenerative potential of lion's mane mushroom, Hericium erinaceus (Bull.: Fr.) Pers. (higher Basidiomycetes), in the treatment of peripheral nerve injury (review)</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tabs-link">
+                                                    <h3>Gastrology</h3>
+                                                    <div class="link-content-item ">
+                                                        <div class="inner">
+                                                            <a href="https://pubmed.ncbi.nlm.nih.gov/30806251/">In Vitro and In Vivo Inhibition of Helicobacter pylori by Ethanolic Extracts of Lion's Mane Medicinal Mushroom, Hericium erinaceus (Agaricomycetes)</a>
+                                                            <a href="https://pubmed.ncbi.nlm.nih.gov/26364939/">Anti-Helicobacter pylori activity of bioactive components isolated from Hericium erinaceus</a>
+                                                            <a href="https://pubmed.ncbi.nlm.nih.gov/23557368/">In vitro anti-Helicobacter pylori effects of medicinal mushroom extracts, with special emphasis on the Lion's Mane mushroom, Hericium erinaceus (higher Basidiomycetes)</a>
+                                                            <a href="https://pubmed.ncbi.nlm.nih.gov/26853960/">Anti-Gastric Ulcer Activity of Polysaccharide Fraction Isolated from Mycelium Culture of Lion's Mane Medicinal Mushroom, Hericium erinaceus (Higher Basidiomycetes)</a>
+                                                            <a href="https://pubmed.ncbi.nlm.nih.gov/32450023/">Therapeutic Effect and Potential Mechanisms of Lion's Mane Medicinal Mushroom, Hericium erinaceus (Agaricomycetes), Mycelia in Submerged Culture on Ethanol-Induced Chronic Gastric Injury</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tabs-link">
+                                                    <h3>Oncology</h3>
+                                                    <div class="link-content-item ">
+                                                        <div class="inner">
+                                                            <a href="https://pubmed.ncbi.nlm.nih.gov/29431066/">A Polysaccharide Isolated from Mycelia of the Lion's Mane Medicinal Mushroom Hericium erinaceus (Agaricomycetes) Induced Apoptosis in Precancerous Human Gastric Cells</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tabs-link">
+                                                    <h3>Diabetes / Metabolism</h3>
+                                                    <div class="link-content-item ">
+                                                        <div class="inner">
+                                                            <a href="https://pubmed.ncbi.nlm.nih.gov/32738392/">Characterization of α-glucosidase inhibitory constituents of the fruiting body of lion's mane mushroom (Hericium erinaceus)</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tabs-link">
+                                                    <h3>Safety</h3>
+                                                    <div class="link-content-item ">
+                                                        <div class="inner">
+                                                            <a href="https://pubmed.ncbi.nlm.nih.gov/31002635/">
+                                                            Thirteen-Week Oral Toxicity Evaluation of Erinacine AEnriched Lion's Mane Medicinal Mushroom, Hericium erinaceus (Agaricomycetes), Mycelia in Sprague-Dawley Rats</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tabs-link">
+                                                    <h3>Molecules identification / Extraction method</h3>
+                                                    <div class="link-content-item ">
+                                                        <div class="inner">
+                                                            <a href="https://pubmed.ncbi.nlm.nih.gov/30421988/">
+                                                                Recent developments in Hericium erinaceus polysaccharides: extraction, purification, structural characteristics and biological activities</a>
+                                                                <a href="https://pubmed.ncbi.nlm.nih.gov/34169530/">Prospecting medicinal properties of Lion's mane mushroom</a>
+                                                                <a href="https://pubmed.ncbi.nlm.nih.gov/29509661/">Two New Cyathane Diterpenoids from Mycelial Cultures of the Medicinal Mushroom Hericium erinaceus and the Rare Species, Hericium flagellum</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="cs-cordyceps" class="cont-item cont-item-3">
+                            <div class="con-content content-cordyceps">
+                                    <div class="custom-breadcrumbs">
+                                        <p><span>Cordyceps Product</span> <span>></span> <span>Clinical Study</span></p>
+                                
+                                    </div>
+                                    <div class="disc-wrap">
+                                        <div class="main-title">
+                                            <h2>Cordyceps</h2>
+                                        </div>
+                                        <div class="disc">
+                                            <p>Introducing our 100% organic Turkey Tail (Trametes versicolor) mushroom extract – a natural supplement that harnesses the power of this remarkable fungus, revered in traditional medicine and backed by contemporary scientific research.</p>
+                                        </div>
+                                    </div>
+                                    <div class="research-wrapper">
+                                    <div class="container">
+                                        <div class="title-wrap">
+                                            <h2>Research</h2>
+                                        </div>
+                                        <div class="content-tabs-wrap">
+                                            <div class=" tabs-links-wrap">
+                                                <div class="tabs-link active">
+                                                    <h3 class="active">Bone Health and Osteoporosis</h3>
+                                                    <div class="link-content-item ">
+                                                        <div class="inner">
+                                                            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9737375/">Effect of Cordyceps spp. and Cordycepin on Functions of Bones and Teeth and Related Processes: A Review</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tabs-link">
+                                                    <h3>Diabetes and Cardiovascular Diseases</h3>
+                                                    <div class="link-content-item ">
+                                                        <div class="inner">
+                                                            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7356751/">Cordycepin for Health and Wellbeing: A Potent Bioactive Metabolite of an Entomopathogenic Medicinal Fungus Cordyceps with Its Nutraceutical and Therapeutic Potential</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tabs-link">
+                                                    <h3>Reproductive Health</h3>
+                                                    <div class="link-content-item ">
+                                                        <div class="inner">
+                                                            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9372929/">Effects of Cordyceps militaris fermentation products on reproductive development in juvenile male mice</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tabs-link">
+                                                    <h3>Eye Health (Glaucoma)</h3>
+                                                    <div class="link-content-item ">
+                                                        <div class="inner">
+                                                            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8837943/">Lowering the Intraocular Pressure in Rats and Rabbits by Cordyceps cicadae Extract and Its Active Compounds</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tabs-link">
+                                                    <h3>Cancer</h3>
+                                                    <div class="link-content-item ">
+                                                        <div class="inner">
+                                                            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6106948/">Aqueous Extracts of Cordyceps kyushuensis Kob Induce Apoptosis to Exert Anticancer Activity</a>
+                                                            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6212910/">The Anticancer Properties of Cordycepin and Their Underlying Mechanisms</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tabs-link">
+                                                    <h3>Medicinal Biofactory</h3>
+                                                    <div class="link-content-item ">
+                                                        <div class="inner">
+                                                        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7111646/">Cordyceps – A traditional Chinese medicine and another fungal therapeutic biofactory?</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="cs-rieshi" class="cont-item cont-item-4">
+                            <div class="con-content content-rieshi">
+                                <div class="custom-breadcrumbs">
+                                    <p><span>Reishi Product</span> <span>></span> <span>Clinical Study</span></p>
+                            
+                                </div>
+                                <div class="disc-wrap">
+                                    <div class="main-title">
+                                        <h2>Reishi</h2>
+                                    </div>
+                                    <div class="disc">
+                                        <p>Introducing our 100% organic Turkey Tail (Trametes versicolor) mushroom extract – a natural supplement that harnesses the power of this remarkable fungus, revered in traditional medicine and backed by contemporary scientific research.</p>
+                                    </div>
+                                </div>
+                                <div class="research-wrapper">
+                                    <div class="container">
+                                        <div class="title-wrap">
+                                            <h2>Research</h2>
+                                        </div>
+                                        <div class="content-tabs-wrap">
+                                            <div class=" tabs-links-wrap">
+                                                <div class="tabs-link active">
+                                                    <h3 class="active">KIDNEY</h3>
+                                                    <div class="link-content-item ">
+                                                        <div class="inner">
+                                                            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8508562/">Ganoderic Acids Prevent Renal Ischemia Reperfusion Injury by Inhibiting Inflammation and Apoptosis</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tabs-link">
+                                                    <h3>LIVER</h3>
+                                                    <div class="link-content-item ">
+                                                        <div class="inner">
+                                                            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8931630/">Ganoderic acid A ameliorates non-alcoholic streatohepatitis (NASH) induced by high-fat high-cholesterol diet in mice</a>
+                                                            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8913248/">Ganoderic acids-rich ethanol extract from Ganoderma lucidum protects against alcoholic liver injury and modulates intestinal microbiota in mice with excessive alcohol intake</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tabs-link">
+                                                    <h3>ASTHMA</h3>
+                                                    <div class="link-content-item ">
+                                                        <div class="inner">
+                                                        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8460586/">Ganoderic Acid A Alleviates OVA-Induced Asthma in Mice</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tabs-link">
+                                                    <h3>ARTHEROSCLEROSE</h3>
+                                                    <div class="link-content-item ">
+                                                        <div class="inner">
+                                                        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9470892/">Ganoderic acid A inhibits ox-LDL-induced THP-1-derived macrophage inflammation and lipid deposition via Notch1/PPARγ/CD36 signaling</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tabs-link">
+                                                    <h3>NEURO (PARKINSON - PSYCHOSIS DRUGS)</h3>
+                                                    <div class="link-content-item ">
+                                                        <div class="inner">
+                                                            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10498832/">Ganoderic Acid A targeting leucine‐rich repeat kinase 2 involved in Parkinson's disease–A computational study</a>
+                                                            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4370157/">Ganoderic acid B's influence towards the therapeutic window of trifluoperazin</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tabs-link">
+                                                    <h3>CANCER / CHEMOTHERAPIES SECONDARY EFFECTS</h3>
+                                                    <div class="link-content-item ">
+                                                        <div class="inner">
+                                                            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6711158/">Ganoderic acid loaded nano-lipidic carriers improvise treatment of hepatocellular carcinoma</a>
+                                                            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8463583/">Ganoderic acid alleviates chemotherapy-induced fatigue in mice bearing colon tumor</a>
+                                                            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8201584/">Ganoderic acid T improves the radiosensitivity of HeLa cells via converting apoptosis to necroptosis</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{{ region name="page-bottom-banner" }}}
+        
+    
+    {{ else }}   
+        <div class="page-content page-content--centered">
+            {{{page.content}}}
+        </div>
+        
+    {{/if}}
+    
+    
+    
+</main>
+
+{{/partial}}
+
+{{> layout/base}}
+
+
+<script>
+// $(document).ready(function() {
+//     $('.tabs-links-wrap h3').click(function() {
+//         var index = $(this).index();
+        
+//         $('.link-content-item').removeClass('active');
+//         $('.tabs-links-wrap h3').removeClass('active');
+
+//         $('.link-content-item').eq(index).addClass('active');
+//         $(this).addClass('active');
+//     });
+// });
+
+
+
+// policy page tabber
+let tabs_pol = document.querySelectorAll('.pol-tb-btn');
+let tabContent_pol = document.querySelectorAll('.pol-con');
+
+
+tabs_pol.forEach((tab, index) => {
+    tab.addEventListener("click", () => {
+        tabContent_pol.forEach((content) =>{
+            content.classList.remove("active");
+        });
+
+        tabs_pol.forEach((tab) => {
+            tab.classList.remove('active');
+        });
+
+        tabContent_pol[index].classList.add('active');      
+        tabs_pol[index].classList.add('active');      
+    })
+})
+
+
+let tabs = document.querySelectorAll('.tabslist .tab-new');
+let tabContent = document.querySelectorAll('.cont-item');
+
+
+tabs.forEach((tab, index) => {
+    tab.addEventListener("click", () => {
+        tabContent.forEach((content) =>{
+            content.classList.remove("active");
+        });
+
+        tabs.forEach((tab) => {
+            tab.classList.remove('active');
+        });
+
+        tabContent[index].classList.add('active');      
+        tabs[index].classList.add('active');      
+    })
+})
+
+
+// third party mobile tabber 
+
+$(".mob-view-tabber a").click(function(){
+    $(".tabslist").addClass("acc");
+})
+
+    
+    
+$(".tab-new,#select-pro-back").click(function(){
+    $(".tabslist").removeClass("acc");
+    
+     if ($(window).width() < 750) {        
+    setTimeout(function(){
+        
+var new_text = $(".tab-new.active a span").text();
+var img_src = $(".tab-new.active a img").attr('src');
+
+$('.top-select-button:visible a img').attr('src', img_src);
+$('.top-select-button:visible span').text(new_text)
+        
+        // console.log('this is running;');
+    window.scrollTo(0, 0);
+        
+    },20);
+}
+
+});
+  
+   
+// fixed prodect tabber 
+// setTimeout(()=>{
+// const footer = document.querySelector('footer');
+// const targetElement = document.querySelector('.mob-view-tabber');
+
+
+// const observer = new IntersectionObserver((entries, observer) => {
+//     entries.forEach(entry => {
+//         if (entry.isIntersecting) {
+//             targetElement.classList.add('footer-in-view');
+//         } else {
+//             targetElement.classList.remove('footer-in-view');
+//         }
+//     });
+// });
+
+
+// observer.observe(footer);
+// }, 100)
+
+$(document).ready(function() {
+    setTimeout(() => {
+        const $footer = $('footer');
+        const $targetElement = $('.mob-view-tabber');
+
+        if ($footer.length && $targetElement.length) {
+            const footer = $footer[0];
+            const targetElement = $targetElement[0];
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        targetElement.classList.add('footer-in-view');
+                    } else {
+                        targetElement.classList.remove('footer-in-view');
+                    }
+                });
+            });
+
+            observer.observe(footer);
+        }
+    }, 100);
+});
+
+    
+</script>
